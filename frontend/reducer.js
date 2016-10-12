@@ -6,7 +6,13 @@ const _defaultState = {
 
 const reducer = (oldState = _defaultState, action) => {
   switch(action.type) {
-    
+    case ADD_FOOD:
+      return ({
+        foods: [
+          ...oldState.foods,
+          action.food
+        ]
+      })
     default:
       return oldState;
   }
