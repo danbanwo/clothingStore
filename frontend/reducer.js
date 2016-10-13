@@ -1,16 +1,17 @@
-import { ADD_FOOD, CLEAR } from "./actions";
+import { ADD_ITEM } from "./actions";
 
 const _defaultState = {
-  foods: []
+  cart: []
 }
+
 
 const reducer = (oldState = _defaultState, action) => {
   switch(action.type) {
-    case ADD_FOOD:
+    case ADD_ITEM:
       return ({
-        foods: [
-          ...oldState.foods,
-          action.food
+        cart: [
+          ...oldState.cart,
+          action.item
         ]
       })
     default:

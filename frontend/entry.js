@@ -1,16 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
-import { addSushi, addRamen, addRiceBall, addSake, addGreenTea } from './actions.js'
-import Food from './components/food.jsx'
+import {Router, Route, hashHistory} from 'react-router';
 import store from './store';
-import FoodContainer from './components/food_container.js'
+import CartContainer from './components/cart_container.js'
+import Clothing from './components/clothing.jsx'
 
 const App = () => (
 	<Provider store={store}>
-		<FoodContainer/>
+		<Router history={hashHistory}>
+			<Route path="/" component={Clothing}/>
+			<Route path="/cart" component={CartContainer}/>
+		</Router>
 	</Provider>
 )
+
 
 document.addEventListener("DOMContentLoaded", () => {
 	ReactDOM.render(
